@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>課表</title>
+<meta name="theme-color" content="#1D2B4F">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero" id="hero">
+  <div class="hero-top">
+    <div class="hero-top-left">
+      <span class="clock" id="clock">00:00:00</span>
+      <span class="school-name">桃園市立陽明高級中等學校 108班</span>
+    </div>
+    <span class="notify-btn on" id="notifyBtn">🔔 通知常駐中</span>
+  </div>
+
+  <div class="hero-main" id="heroMain">
+    <span class="hero-tag" id="heroTag">現在</span>
+    <h1 class="hero-subject" id="heroSubject">—</h1>
+    <div class="hero-meta">
+      <span id="heroTeacher"></span>
+      <span id="heroTime"></span>
+    </div>
+    <div class="hero-progress-track" id="progressTrack">
+      <div class="hero-progress-fill" id="progressFill"></div>
+    </div>
+    <div class="hero-countdown" id="heroCountdown"></div>
+    <button id="fullscreenBtn" class="fullscreen-btn">⛶ 橫向全螢幕倒數</button>
+  </div>
+</header>
+
+<div id="fsOverlay" class="fs-overlay">
+  <div class="fs-clock" id="fsClock">00:00:00</div>
+  <button id="fsExitBtn" class="fs-exit">✕</button>
+  <div class="fs-tag" id="fsTag">現在</div>
+  <div class="fs-subject" id="fsSubject">—</div>
+  <div class="fs-countdown" id="fsCountdown">00:00</div>
+  <div class="fs-sub" id="fsSub"></div>
+</div>
+
+<section class="next-strip" id="nextStrip">
+  <span class="next-label">下一節</span>
+  <span class="next-subject" id="nextSubject">—</span>
+  <span class="next-teacher" id="nextTeacher"></span>
+  <span class="next-time" id="nextTime"></span>
+</section>
+
+<main>
+  <h2 class="section-title">本週課表</h2>
+  <div class="table-wrap">
+    <table id="scheduleTable">
+      <thead>
+        <tr id="tableHead"></tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <p class="notice" id="notice"></p>
+</main>
+
+<footer>
+  <p>115學年度 第1學期 · 導師 袁銘德 · 每 30 秒自動更新</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

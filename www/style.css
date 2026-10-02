@@ -1,0 +1,329 @@
+:root{
+  --ink: #1D2B4F;
+  --ink-deep: #131E3A;
+  --paper: #F2F4F1;
+  --paper-card: #FFFFFF;
+  --mustard: #D9A441;
+  --mustard-deep: #B9862A;
+  --slate: #6B7688;
+  --line: #DDE1DC;
+  --line-strong: #C3C9C2;
+  --today: #FBF3E3;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink-deep);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 40px;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+  color: #F5F1E6;
+  padding: 20px 20px 26px;
+  border-radius: 0 0 22px 22px;
+}
+
+.hero-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.school-name{
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #C9D0E0;
+}
+
+.notify-btn{
+  background: rgba(255,255,255,0.1);
+  color:#F5F1E6;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: inherit;
+}
+.notify-btn.on{
+  background: var(--mustard);
+  color: var(--ink-deep);
+  border-color: var(--mustard);
+  font-weight: 700;
+}
+
+.hero-main{
+  margin-top: 22px;
+}
+
+.hero-tag{
+  display:inline-block;
+  font-size: 13px;
+  color: var(--mustard);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.hero-subject{
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  font-size: clamp(32px, 10vw, 46px);
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+
+.hero-meta{
+  display:flex;
+  gap: 14px;
+  font-size: 15px;
+  color: #D6DBEA;
+}
+
+.hero-progress-track{
+  margin-top: 16px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.14);
+  overflow: hidden;
+}
+.hero-progress-fill{
+  height:100%;
+  width:0%;
+  background: var(--mustard);
+  transition: width 1s linear;
+}
+
+.hero-countdown{
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--mustard);
+}
+
+/* ---------- Next strip ---------- */
+.next-strip{
+  margin: 14px 16px 0;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display:flex;
+  align-items:baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.next-label{
+  font-size: 12px;
+  color: var(--slate);
+  flex-basis: 100%;
+  order: -1;
+}
+.next-subject{
+  font-family:"Noto Serif TC", serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--ink-deep);
+}
+.next-teacher{
+  font-size: 13px;
+  color: var(--slate);
+}
+.next-time{
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--mustard-deep);
+  font-weight: 700;
+}
+
+/* ---------- Table section ---------- */
+main{
+  padding: 0 16px;
+}
+
+.section-title{
+  font-family: "Noto Serif TC", serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 26px 0 10px;
+  color: var(--ink-deep);
+}
+
+.table-wrap{
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--paper-card);
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+  font-size: 13px;
+}
+
+th, td{
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 8px 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+th:last-child, td:last-child{ border-right: none; }
+tr:last-child td{ border-bottom: none; }
+
+thead th{
+  background: var(--ink);
+  color: #F0EEE4;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 10px 6px;
+}
+thead th.today-col{
+  background: var(--mustard-deep);
+  color: var(--ink-deep);
+  font-weight: 700;
+}
+
+.period-col{
+  background: #F7F8F6;
+  font-size: 11px;
+  color: var(--slate);
+  white-space: nowrap;
+  text-align: left;
+  padding-left: 10px;
+}
+.period-col .p-label{ display:block; font-weight:700; color: var(--ink-deep); font-size: 12.5px;}
+.period-col .p-time{ display:block; }
+
+td.today-col{
+  background: var(--today);
+}
+
+.cell-subject{
+  font-weight: 700;
+  color: var(--ink-deep);
+}
+.cell-teacher{
+  display:block;
+  font-size: 10.5px;
+  color: var(--slate);
+  margin-top: 2px;
+}
+.cell-empty{ color: var(--line-strong); }
+
+tr.current-row .period-col{
+  background: var(--ink);
+  color: #F0EEE4;
+}
+tr.current-row .period-col .p-label,
+tr.current-row .period-col .p-time{ color: #F0EEE4; }
+tr.current-row td.today-col{
+  background: var(--mustard);
+}
+
+.notice{
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin: 18px 2px 0;
+}
+
+footer{
+  text-align:center;
+  color: var(--slate);
+  font-size: 11.5px;
+  margin-top: 24px;
+}
+
+.fullscreen-btn{
+  margin-top: 14px;
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  color: #F0EEE4;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* ---------- Fullscreen countdown ---------- */
+.fs-overlay{
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--ink-deep);
+  color: #F5F1E6;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.fs-overlay.active{ display: flex; }
+
+.fs-exit{
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #F5F1E6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.fs-clock{
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: clamp(18px, 3vw, 28px);
+  color: #D6DBEA;
+  letter-spacing: 0.03em;
+}
+
+.fs-tag{
+  font-size: clamp(14px, 2.4vw, 20px);
+  color: var(--mustard);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+.fs-subject{
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 44px);
+  margin-bottom: 18px;
+}
+.fs-countdown{
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: clamp(72px, 22vw, 200px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.fs-sub{
+  margin-top: 18px;
+  font-size: clamp(13px, 2vw, 18px);
+  color: #B9C0D4;
+}
+
+@media (min-width: 640px){
+  body{ max-width: 640px; margin: 0 auto; }
+}

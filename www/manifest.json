@@ -1,0 +1,26 @@
+{
+  "name": "課表",
+  "short_name": "課表",
+  "description": "桃園市立陽明高級中等學校 108班 課程表，顯示目前與下一節課程",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1D2B4F",
+  "theme_color": "#1D2B4F",
+  "orientation": "portrait",
+  "lang": "zh-Hant",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
